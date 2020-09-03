@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--- Identifies the style of the class book and the id novel as well as
+  header1, the background, and the paragraph styles-->
+  <style>
+    body {background-color: powderblue;}
+    h1   {color: black;}
+    p    {color: black;}
+    .book {
+      background-color: tomato;
+      color: white;
+      padding: 10px;
+    }
+    #novel {
+      background-color: lightblue;
+      color: black;
+      padding: 40px;
+      text-align: center;
+    }
+
+  </style>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+    </script>
+</head>
+<body>
+  <!-- This is a comment -->
+  <h1 id="Novel">Novels</h1>
+
+  <h2 class="book">Shogun</h2>
+  <h2 class="book">Norweigan Wood</h2>
+
+  <p>My first paragraph. &#128516; &#128516; &#128516;</p>
+
+  <img src="book.jpg" alt="Stack of Books" />
+
+  <!--- Takes you to a wired page about favorite books -->
+  <a href="https://www.wired.com/story/favorite-books-q4-2018/" target="_blank">Wired Book Recommendations </a>
+
+  <table style="width:30%">
+    <tr>
+      <th>Book Name</th>
+      <th>Author</th>
+      <th>Rating</th>
+    </tr>
+    <tr>
+      <td>Shogun</td>
+      <td>James Clavel</td>
+      <td>4.4/5</td>
+    </tr>
+    <tr>
+      <td>Norweigan Wood</td>
+      <td>Haruki Murakami</td>
+      <td>4/5</td>
+    </tr>
+  </table>
+
+
+  <p>These books are both <strong>Japanese Novels</strong></p>
+
+  <dl>
+    <dt>Shogun</dt>
+    <dd>- <em>1975 novel</em></dd>
+    <dt>Norweigan Wood</dt>
+    <dd>- <em>1987 novel</em></dd>
+  </dl>
+
+  <label for="fbook2">Favorite book out of the two:</label>
+  <select id="fbook2" name="fbook2" size="2" multiple>
+    <option value="shogun">Shogun</option>
+    <option value="NorW">Norweigan Wind</option>
+  </select>
+
+
+
+
+  <form>
+    <br/><label for="fbook">Favorite Book:</label><br/>
+    <input type="text" id="fbook" name="fbook"><br/>
+    <label for="lfbook">Least Favorite Book:</label><br/>
+    <input type="text" id="lfbook" name="lfbook">
+  </form>
+
+  <video width="320" height="240" controls>
+    <source src="movie.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+
+  <audio controls>
+    <source src="FairlyOddParents.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
+
+
+
+  <iframe width="420" height="315"
+  src="https://www.youtube.com/embed/0ERGqNFRcf4">
+  </iframe>
+
+  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"/></div>
+
+  <img id="drag1" src="book.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69"/>
+
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+  </canvas>
+
+
+</body>
+</html>
