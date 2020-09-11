@@ -99,25 +99,27 @@
     <input type="text" id="lfbook" name="lfbook">
   </form>
 
+  <!-- Creates canvas -->
   <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
         Sorry. Your browser does not support HTML5 canvas element.
   </canvas>
 
 
   <script>
+    // Retrieves canvas Id to edit
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
 
-    // Create gradient
+    // Create a linear gradient with 400 as the x color stop
     var grd = ctx.createLinearGradient(0, 0, 400, 0);
     grd.addColorStop(0, "blue");
     grd.addColorStop(1, "red");
 
-    // Fill with gradient
+    // Fills the canvas with gradient
     ctx.fillStyle = grd;
     ctx.fillRect(0, 0, 500, 500);
 
-
+    // Adds text to canvas
     ctx.font = "60px Arial";
     ctx.strokeText("Thank you!", 100, 250);
   </script>
