@@ -25,16 +25,16 @@
   <!-- This is a comment -->
   <h1 id="Novel">Novels</h1>
 
+  <!-- Two headers for The two main books -->
   <h2 class="book">Shogun</h2>
   <h2 class="book">Norweigan Wood</h2>
 
   <p>This is a webpage about books. &#128516; &#128516; &#128516;</p>
 
+  <!-- Displays an image of books -->
   <img src="book.jpg" alt="Stack of Books" />
 
-  <!--- Takes you to a wired page about favorite books -->
-  <a href="https://www.wired.com/story/favorite-books-q4-2018/" target="_blank">Wired Book Recommendations </a>
-
+  <!-- Creates a table of the basic information of the two books -->
   <table style="width:30%">
     <tr>
       <th>Book Name</th>
@@ -54,23 +54,25 @@
   </table>
 
 
-  <p>These books are both <strong>Japanese Novels</strong></p>
+  <p>Shogun is a Japanese <strong>inspired</strong> novel, while Norweigan Wood is written
+  by a Japanese person.</p>
 
+  <!-- Displays a list with the wikipedia page as an Iframe description  -->
   <dl>
     <dt>Shogun</dt>
-
     <dd><iframe src= "https://en.wikipedia.org/wiki/Sh%C5%8Dgun_(novel)" style="height:500px;width:1000px;"></iframe></dd>
     <dt>Norweigan Wood</dt>
-
     <dd><iframe src= "https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)" style="height:500px;width:1000px;"></iframe></dd>
   </dl>
 
+  <!-- Displays an organized list -->
   <ol>
     <li><img src="shogun.jpg" alt="Shogun Novel Cover" style="width:500px;height:600px;"/></li>
     <li><img src="norweigan.jpg" alt="Norweigan Novel Cover" style="width:500px;height:600px;"/></li>
   </ol>
   <p><em>Some other books to read:</em></p>
 
+  <!-- Displays an unorganized list -->
   <ul>
     <li>Kitchen</li>
     <li>Kokoro</li>
@@ -78,55 +80,46 @@
     <li>Snow Country</li>
   </ul>
 
+  <!-- Displays two hyperlinks, one that opens another tab and another that opens on the same one -->
+  <a href="https://www.wired.com/story/favorite-books-q4-2018/" target="_blank">Wired Book Recommendations<br/></a>
+  <a href="https://jamesclear.com/best-books" target="_self">The Best Books:Recommended Reading List<br/></a>
+
+  <!-- Scroll down option of Shogun or Norweigan Wood, no input is stored -->
   <label for="fbook2">Favorite book out of the two:</label>
   <select id="fbook2" name="fbook2" size="2" multiple>
     <option value="shogun">Shogun</option>
     <option value="NorW">Norweigan Wind</option>
   </select>
 
+  <!-- Displays a form in which the user can type, no input is stored -->
   <form>
     <br/><label for="fbook">Favorite Book:</label><br/>
     <input type="text" id="fbook" name="fbook"><br/>
     <label for="lfbook">Least Favorite Book:</label><br/>
     <input type="text" id="lfbook" name="lfbook">
   </form>
-  <canvas id="norweiganBack">
+
+  <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
         Sorry. Your browser does not support HTML5 canvas element.
   </canvas>
 
 
   <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
 
-    window.onload = function () {
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 400, 0);
+    grd.addColorStop(0, "blue");
+    grd.addColorStop(1, "red");
 
-      // GET THE IMAGE.
-      var img0 = new Image();
-      img.src = '/norweiganBack.jpg';
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(0, 0, 500, 500);
 
-      var img1 = new Image()
-      img.src = '/shogunBack.jpg';
 
-        // WAIT TILL IMAGE IS LOADED.
-        img.onload = function () {
-              fill_canvas(img0, img1);       // FILL THE CANVAS WITH THE IMAGE.
-          }
-      function fill_cavas(img0, img1) {
-        var canvas0 = document.getElementById('norweiganBack');
-        var ctx0 = canvas.getContext('2d');
-
-        // Changes dimensions of the canvas
-        canvas0.width = img0.width;
-        canvas0.height = img0.height;
-
-        ctx0.drawImage(img0, 0, 0);
-        var canvas1 = document.getElementById('norweiganBack');
-        var ctx1 = canvas.getContext('2d');
-
-        canvas1.width = img1.width;
-        canvas1.height = img1.height;
-
-        ctx1.drawImage(img1, 0, 0);
-    }
+    ctx.font = "60px Arial";
+    ctx.strokeText("Thank you!", 100, 250);
   </script>
 </body>
 </html>
