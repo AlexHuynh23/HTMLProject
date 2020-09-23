@@ -1,38 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--- Identifies the style of the class book and the id novel as well as
-  header1, the background, and the paragraph styles-->
-  <style>
-    body {background-color: powderblue;}
-    h1   {color: black;}
-    p    {color: black;}
-    .book {
-      background-color: tomato;
-      color: white;
-      padding: 10px;
-    }
-    #novel {
-      background-color: lightblue;
-      color: black;
-      padding: 40px;
-      text-align: center;
-    }
-
-  </style>
+  <!--- Imports CSS --->
+  <link rel="stylesheet" href="mystyle.css">
 </head>
 <body>
   <!-- This is a comment -->
-  <h1 id="Novel">Novels</h1>
-
-  <!-- Two headers for The two main books -->
-  <h2 class="book">Shogun</h2>
-  <h2 class="book">Norweigan Wood</h2>
+  <ul>
+    <li><a href="#novel">Novels</a></li>
+    <li><a href="#shogun">Shogun</a></li>
+    <li><a href="#norWood">Norweigan Wood</a></li>
+  </ul>
+  <h1 class = "header" id="Novel">Novels</h1>
 
   <p>This is a webpage about books. &#128516; &#128516; &#128516;</p>
 
   <!-- Displays an image of books -->
   <img src="book.jpg" alt="Stack of Books" />
+
 
   <!-- Creates a table of the basic information of the two books -->
   <table style="width:30%">
@@ -53,23 +38,20 @@
     </tr>
   </table>
 
-
   <p>Shogun is a Japanese <strong>inspired</strong> novel, while Norweigan Wood is written
   by a Japanese person.</p>
 
-  <!-- Displays a list with the wikipedia page as an Iframe description  -->
-  <dl>
-    <dt>Shogun</dt>
-    <dd><iframe src= "https://en.wikipedia.org/wiki/Sh%C5%8Dgun_(novel)" style="height:500px;width:1000px;"></iframe></dd>
-    <dt>Norweigan Wood</dt>
-    <dd><iframe src= "https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)" style="height:500px;width:1000px;"></iframe></dd>
-  </dl>
+  <!-- Two headers for The two main books -->
+  <h2 id = "shogun" class="book">Shogun</h2>
+  <img src="shogun.jpg" alt="Shogun Novel Cover" style="width:500px;height:600px;"/></li>
+  <iframe src= "https://en.wikipedia.org/wiki/Sh%C5%8Dgun_(novel)" style="height:500px;width:1000px;"></iframe>
 
-  <!-- Displays an organized list -->
-  <ol>
-    <li><img src="shogun.jpg" alt="Shogun Novel Cover" style="width:500px;height:600px;"/></li>
-    <li><img src="norweigan.jpg" alt="Norweigan Novel Cover" style="width:500px;height:600px;"/></li>
-  </ol>
+  <h2 id = "norWood" class="book">Norweigan Wood</h2>
+  <img src="norweigan.jpg" alt="Norweigan Novel Cover" style="width:500px;height:600px;"/></li>
+  <iframe src= "https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)" style="height:500px;width:1000px;"></iframe>
+
+
+
   <p><em>Some other books to read:</em></p>
 
   <!-- Displays an unorganized list -->
